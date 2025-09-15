@@ -1,0 +1,2826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Gamepad Tester | Check PS4, PS5, Xbox & PC Controllers Online</title>
+    <meta name="description" content="Free online gamepad tester for PS4, PS5, PS3, Xbox and PC controllers. Test button response, detect stick drift, check triggers and vibration. No downloads required - test directly in your browser.">
+    <meta name="keywords" content="gamepad tester, controller test, xbox controller test, playstation controller test, nintendo switch pro controller test, stick drift detection, controller calibration, gamepad diagnostic, gaming controller online test">
+    <meta name="author" content="Gamepad Testing Hub">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Professional Gamepad Tester - Test Your Gaming Controller Online">
+    <meta property="og:description" content="Free online tool to test Xbox, PlayStation, Nintendo Switch controllers. Detect stick drift, test buttons, triggers, and vibration. Compatible with all major gaming controllers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Professional Gamepad Tester - Controller Testing Tool">
+    <meta name="twitter:description" content="Test your gaming controller online. Free gamepad diagnostic tool for Xbox, PlayStation, Nintendo Switch controllers.">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "GamePad Tester",
+        "description": "Free online gamepad tester for PS4, PS5, PS3, Xbox and PC controllers. Test button response, detect stick drift, check triggers and vibration.",
+        "url": "https://gamepadtester.tech",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Controller button testing",
+            "Stick drift detection", 
+            "Trigger sensitivity testing",
+            "Vibration testing",
+            "Real-time input feedback",
+            "Cross-platform support"
+        ],
+        "browserRequirements": "Modern web browser with HTML5 Gamepad API support",
+        "creator": {
+            "@type": "Organization",
+            "name": "GamePad Tester",
+            "url": "https://gamepadtester.com"
+        },
+        "softwareVersion": "2.0",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-01-01"
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GamePad Tester",
+        "url": "https://gamepadtester.tech",
+        "description": "Provider of free online gamepad testing tools for gaming controllers",
+        "foundingDate": "2024",
+        "serviceArea": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Gaming Controller Testing Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Controller Testing",
+                        "description": "Free online testing for gaming controllers"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is GamePad Tester?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GamePad Tester is a free online tool that lets you test controllers of PS5, PS4, PS3, and Xbox. It checks button response, joystick accuracy, stick drift, trigger sensitivity, and vibration feedback directly in your browser."
+                }
+            },
+            {
+                "@type": "Question", 
+                "name": "How do I test my controller?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Simply connect your controller via USB or Bluetooth, press any button to activate it, and start testing. The tool will show real-time feedback for all your controller inputs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which controllers are supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GamePad Tester supports PS5 DualSense, PS4 DualShock, PS3 controllers, Xbox One, Xbox Series X/S controllers, Nintendo controllers, and most PC gamepads."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to download anything?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No downloads required! GamePad Tester runs entirely in your web browser using the HTML5 Gamepad API."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is GamePad Tester free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, GamePad Tester is completely free to use. No registration, subscription, or payment required."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --success-color: #22c55e;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            --background: #ffffff;
+            --background-light: #f8fafc;
+            --surface: #ffffff;
+            --surface-gray: #f1f5f9;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --border-color: #e2e8f0;
+            --border-color-dark: #cbd5e1;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--background-light);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Modern Navigation */
+        .main-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .nav-link.active:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-toggle:hover {
+            background: var(--background-light);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.show {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                margin: 5px 0;
+            }
+        }
+
+        /* Hero Header */
+        .hero-header {
+            position: relative;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px 0;
+            margin-bottom: 60px;
+            overflow: hidden;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 30px 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Steps Grid */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--surface);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px auto;
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Multiple Controllers Panel */
+        .controllers-panel {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .controllers-panel h3 {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+        }
+
+        .controllers-panel p {
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+        }
+
+        .controllers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .controller-slot {
+            background: var(--background-light);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+        }
+
+        .controller-slot:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .controller-slot.connected {
+            border-color: var(--success-color);
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .controller-slot.selected {
+            border-color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .controller-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .controller-number {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .controller-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .controller-status.not-connected {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error-color);
+        }
+
+        .controller-status.connected {
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--success-color);
+        }
+
+        .controller-status.selected {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+        }
+
+        .controller-info {
+            margin-bottom: 20px;
+            min-height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .controller-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .controller-details {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .select-controller-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .select-controller-btn:hover:not(:disabled) {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+        }
+
+        .select-controller-btn:disabled {
+            background: var(--text-muted);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .select-controller-btn.selected {
+            background: var(--success-color);
+        }
+
+        /* Help Modal */
+        .help-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            backdrop-filter: blur(5px);
+        }
+
+        .help-modal.show {
+            display: flex;
+        }
+
+        .help-modal-content {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            margin: 20px;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .help-modal h3 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .help-modal p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .help-steps {
+            text-align: left;
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--background-light);
+            border-radius: 12px;
+        }
+
+        .help-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: var(--surface);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .help-step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .close-modal-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+        }
+
+        /* Connection Status */
+        .connection-status {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            opacity: 0.1;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 24px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-feature-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Modern Section Styling */
+        .section {
+            background: var(--surface);
+            margin-bottom: 40px;
+            padding: 60px 40px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.01em;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Modern Card Design */
+        .feature-card, .faq-item {
+            background: var(--surface);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover, .faq-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Grid Layouts */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Device Selection Enhancement */
+        .device-selector {
+            display: flex;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .device-btn {
+            background: var(--surface);
+            border: 2px solid var(--border-color);
+            padding: 20px 30px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .device-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .device-btn:hover::before {
+            left: 0;
+        }
+
+        .device-btn:hover {
+            color: white;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .device-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            box-shadow: var(--shadow-lg);
+        }
+
+        header .subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--border-color-dark);
+        }
+
+        .feature-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .section h2 {
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+
+        .section h3 {
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .gamepad-visual {
+            text-align: center;
+            margin: 32px 0;
+            padding: 40px 24px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .controller-svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .testing-interface {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .unified-testing-box {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin: 20px 0;
+        }
+
+        .sticks-row, .triggers-row, .buttons-row {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .buttons-row {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .sticks-row {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .triggers-row {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .buttons-row {
+            grid-template-columns: 2fr 1fr;
+            align-items: start;
+        }
+
+        .stick-section, .trigger-section, .buttons-section, .controls-section {
+            text-align: center;
+        }
+
+        .stick-section h4, .trigger-section h4, .buttons-section h4 {
+            margin: 0 0 15px 0;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .stick-data, .trigger-data {
+            margin-top: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .clear-btn {
+            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: none;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .clear-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 114, 128, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sticks-row, .triggers-row {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .buttons-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .unified-testing-box {
+                padding: 20px;
+            }
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: var(--surface-gray);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .status-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--error-color);
+            animation: statusPulse 2s infinite;
+            box-shadow: 0 0 10px currentColor;
+        }
+
+        .status-dot.connected {
+            background: var(--success-color);
+            animation: connectedGlow 2s infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+
+        @keyframes connectedGlow {
+            0%, 100% { box-shadow: 0 0 10px var(--success-color); }
+            50% { box-shadow: 0 0 20px var(--success-color), 0 0 30px var(--success-color); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .controller-btn {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .controller-btn:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        .controller-btn.active {
+            filter: drop-shadow(0 0 10px #fbbf24) brightness(1.5);
+            transform: scale(1.1);
+        }
+        
+        .controller-btn.active circle {
+            fill: #fbbf24 !important;
+            stroke: #f59e0b !important;
+            stroke-width: 2 !important;
+        }
+        
+        .controller-btn.active rect {
+            fill: #fbbf24 !important;
+            stroke: #f59e0b !important;
+            stroke-width: 2 !important;
+        }
+        
+        .controller-btn.active polygon {
+            fill: #fbbf24 !important;
+            stroke: #f59e0b !important;
+            stroke-width: 2 !important;
+        }
+        
+        .controller-btn.active path {
+            fill: #fbbf24 !important;
+            stroke: #f59e0b !important;
+            stroke-width: 2 !important;
+        }
+
+        .faq-section {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--surface) 0%, var(--background-light) 100%);
+        }
+
+        .faq-item {
+            background: var(--surface);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .faq-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-color);
+        }
+
+        .faq-question {
+            background: var(--surface);
+            padding: 24px 28px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: var(--surface-gray);
+            color: var(--primary-color);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .faq-answer.open + .faq-question::after,
+        .faq-question.open::after {
+            transform: rotate(45deg);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .faq-answer {
+            padding: 0 28px;
+            background: var(--background-light);
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .faq-answer.open {
+            padding: 24px 28px;
+            max-height: 400px;
+        }
+
+        .faq-answer p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .compatibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .compatibility-card {
+            background: var(--background-light);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .compatibility-card:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.02);
+        }
+
+        .compatibility-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .button-tester {
+            background: var(--background-light);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .button-tester.pressed {
+            background: var(--primary-color);
+            border-color: var(--accent-color);
+            transform: scale(0.95);
+        }
+
+        .sticks-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .stick-visualizer {
+            width: 120px;
+            height: 120px;
+            background: var(--background-light);
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .stick-path-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .stick-indicator {
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.1s ease;
+            z-index: 2;
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .triggers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .trigger-bar {
+            width: 100%;
+            height: 30px;
+            background: var(--background-light);
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .trigger-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .drift-status {
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: var(--success-color);
+            color: white;
+            margin-top: 5px;
+        }
+
+        .drift-status.warning {
+            background: var(--warning-color);
+            color: white;
+            animation: pulse 1s infinite;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+            
+            .sticks-container,
+            .triggers-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Modern Animations and Effects */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(37, 99, 235, 0.6), 0 0 60px rgba(37, 99, 235, 0.4); }
+        }
+
+        /* Apply animations */
+        .section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-feature {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-feature:nth-child(2) { animation-delay: 0.5s; }
+        .hero-feature:nth-child(3) { animation-delay: 1s; }
+        .hero-feature:nth-child(4) { animation-delay: 1.5s; }
+
+        .controller-btn.active {
+            animation: glow 1.5s ease-in-out infinite;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Modern Footer */
+        .main-footer {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            padding: 60px 0 30px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Enhanced responsive design */
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                justify-content: center;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 40px 20px;
+                margin-bottom: 30px;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-link {
+                font-size: 0.9rem;
+            }
+            
+            .hero-header {
+                padding: 80px 0 60px 0;
+            }
+            
+            .hero-header h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 30px 15px;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .controller-svg {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <a href="index.html" class="nav-brand">🎮 GamePad Tester</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="guide.html" class="nav-link">Guide</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero-header">
+        <div class="container">
+            <h1>Free Gamepad Tester for PS4, PS5, Xbox, and More</h1>
+            <p class="hero-subtitle">Easily check if your PS5, PS4, PS3, or Xbox controller is working correctly with Gamepad Tester.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Controller Testing Section -->
+        <section class="quick-start section" id="test">
+            <h2>🎮 Controller Selection</h2>
+                <p>Got multiple controllers? Pick which one you want to test!</p>
+                
+                <div class="controllers-grid">
+                    <div class="controller-slot" id="controller0">
+                        <div class="controller-header">
+                            <span class="controller-number">Controller #1</span>
+                            <span class="controller-status" id="status0">Not Connected</span>
+                        </div>
+                        <div class="controller-info" id="info0">
+                            <span class="controller-name">Connect your controller...</span>
+                        </div>
+                        <button class="select-controller-btn" id="select0" onclick="handleControllerAction(0)">
+                            Select This One
+                        </button>
+                    </div>
+                    
+                    <div class="controller-slot" id="controller1">
+                        <div class="controller-header">
+                            <span class="controller-number">Controller #2</span>
+                            <span class="controller-status" id="status1">Not Connected</span>
+                        </div>
+                        <div class="controller-info" id="info1">
+                            <span class="controller-name">Connect your controller...</span>
+                        </div>
+                        <button class="select-controller-btn" id="select1" onclick="handleControllerAction(1)">
+                            Select This One
+                        </button>
+                    </div>
+                    
+                    <div class="controller-slot" id="controller2">
+                        <div class="controller-header">
+                            <span class="controller-number">Controller #3</span>
+                            <span class="controller-status" id="status2">Not Connected</span>
+                        </div>
+                        <div class="controller-info" id="info2">
+                            <span class="controller-name">Connect your controller...</span>
+                        </div>
+                        <button class="select-controller-btn" id="select2" onclick="handleControllerAction(2)">
+                            Select This One
+                        </button>
+                    </div>
+                    
+                </div>
+                
+                <div class="connection-status">
+                    <div class="status-indicator">
+                        <div class="status-dot" id="connectionStatus"></div>
+                        <span id="connectionText">Gamepad Tester – Connect Your Controller and Start Testing Instantly</span>
+                    </div>
+                    <div style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);">
+                        <div id="debugInfo">Debug: Initializing...</div>
+                    </div>
+                </div>
+            
+            <!-- Visual Controller Testing within same section -->
+            <h3>Here's Your Controller! 🎮</h3>
+
+                        <!-- Visual Controller -->
+            <div class="gamepad-visual">
+                <svg width="700" height="400" viewBox="0 0 700 400" class="controller-svg">
+                    <defs>
+                        <!-- Realistic gradients and shadows -->
+                        <linearGradient id="controllerBodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f8f9fa"/>
+                            <stop offset="50%" style="stop-color:#e9ecef"/>
+                            <stop offset="100%" style="stop-color:#dee2e6"/>
+                        </linearGradient>
+                        
+                        <linearGradient id="buttonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ffffff"/>
+                            <stop offset="50%" style="stop-color:#f8f9fa"/>
+                            <stop offset="100%" style="stop-color:#e9ecef"/>
+                        </linearGradient>
+                        
+                        <linearGradient id="dpadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6c757d"/>
+                            <stop offset="50%" style="stop-color:#5a6268"/>
+                            <stop offset="100%" style="stop-color:#495057"/>
+                        </linearGradient>
+                        
+                        <linearGradient id="stickGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#343a40"/>
+                            <stop offset="50%" style="stop-color:#495057"/>
+                            <stop offset="100%" style="stop-color:#6c757d"/>
+                        </linearGradient>
+                        
+                        <linearGradient id="touchpadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2d3436"/>
+                            <stop offset="100%" style="stop-color:#636e72"/>
+                        </linearGradient>
+                        
+                        <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+                        </filter>
+                        
+                        <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.2"/>
+                        </filter>
+                    </defs>
+                    
+                    <!-- L2 Trigger -->
+                    <rect x="150" y="30" width="30" height="12" rx="6" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="6" id="btn-lt"/>
+                    <text x="165" y="39" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="bold">L2</text>
+                    
+                    <!-- R2 Trigger -->
+                    <rect x="520" y="30" width="30" height="12" rx="6" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="7" id="btn-rt"/>
+                    <text x="535" y="39" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="bold">R2</text>
+                    
+                    <!-- L1 Shoulder Button -->
+                    <rect x="140" y="50" width="50" height="15" rx="7" fill="#ef4444" stroke="#dc2626" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="4" id="btn-lb"/>
+                    <text x="165" y="60" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="bold">L1</text>
+                    
+                    <!-- R1 Shoulder Button -->
+                    <rect x="510" y="50" width="50" height="15" rx="7" fill="#ef4444" stroke="#dc2626" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="5" id="btn-rb"/>
+                    <text x="535" y="60" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="bold">R1</text>
+                    
+                    <!-- Main Controller Body -->
+                    <path d="M 120 80
+                             Q 120 70 140 70
+                             L 180 70
+                             Q 200 70 220 80
+                             L 480 80
+                             Q 500 70 520 70
+                             L 560 70
+                             Q 580 70 580 80
+                             L 580 140
+                             Q 580 160 570 180
+                             L 570 220
+                             Q 570 240 550 250
+                             L 530 260
+                             Q 510 270 490 275
+                             L 210 275
+                             Q 190 270 170 260
+                             L 150 250
+                             Q 130 240 130 220
+                             L 130 180
+                             Q 120 160 120 140
+                             Z"
+                          fill="url(#controllerBodyGradient)" 
+                          stroke="#adb5bd" 
+                          stroke-width="2"
+                          filter="url(#dropShadow)"/>
+                    
+                    
+                    
+                    
+                    
+                    <!-- Touchpad -->
+                    <rect x="250" y="95" width="200" height="80" rx="8" fill="url(#touchpadGradient)" stroke="#495057" stroke-width="2" filter="url(#innerShadow)"/>
+                    <rect x="255" y="100" width="190" height="70" rx="6" fill="#343a40" stroke="#6c757d" stroke-width="1"/>
+                    
+                    <!-- Share Button -->
+                    <ellipse cx="210" cy="85" rx="8" ry="6" fill="#06b6d4" stroke="#0891b2" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="8" id="btn-back"/>
+                    
+                    <!-- Options Button -->
+                    <ellipse cx="490" cy="85" rx="8" ry="6" fill="#06b6d4" stroke="#0891b2" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="9" id="btn-start"/>
+                    
+                    <!-- D-Pad -->
+                    <g transform="translate(200, 190)">
+                        <!-- D-Pad Up -->
+                        <path d="M -8 -25 L 8 -25 L 8 -8 L 25 -8 L 25 8 L 8 8 L 8 25 L -8 25 L -8 8 L -25 8 L -25 -8 L -8 -8 Z" 
+                              fill="#6b7280" stroke="#4b5563" stroke-width="2" filter="url(#dropShadow)"/>
+                        
+                        <!-- D-Pad directional buttons -->
+                        <!-- Up Button -->
+                        <rect x="-8" y="-25" width="16" height="17" fill="#10b981" stroke="#059669" stroke-width="2" 
+                              class="controller-btn" data-button="12" id="dpad-up"/>
+                        <polygon points="0,-20 -4,-12 4,-12" fill="#ffffff"/>
+                        
+                        <!-- Down Button -->
+                        <rect x="-8" y="8" width="16" height="17" fill="#10b981" stroke="#059669" stroke-width="2" 
+                              class="controller-btn" data-button="13" id="dpad-down"/>
+                        <polygon points="0,20 -4,12 4,12" fill="#ffffff"/>
+                        
+                        <!-- Left Button -->
+                        <rect x="-25" y="-8" width="17" height="16" fill="#10b981" stroke="#059669" stroke-width="2" 
+                              class="controller-btn" data-button="14" id="dpad-left"/>
+                        <polygon points="-20,0 -12,-4 -12,4" fill="#ffffff"/>
+                        
+                        <!-- Right Button -->
+                        <rect x="8" y="-8" width="17" height="16" fill="#10b981" stroke="#059669" stroke-width="2" 
+                              class="controller-btn" data-button="15" id="dpad-right"/>
+                        <polygon points="20,0 12,-4 12,4" fill="#ffffff"/>
+                    </g>
+                    
+                    <!-- Face Buttons -->
+                    <g transform="translate(500, 190)">
+                        <!-- Triangle Button (Green) -->
+                        <circle cx="0" cy="-25" r="14" fill="#22c55e" stroke="#16a34a" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="3" id="btn-y"/>
+                        <polygon points="0,-30 -6,-18 6,-18" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+                        
+                        <!-- Cross Button (Blue) -->
+                        <circle cx="0" cy="25" r="14" fill="#3b82f6" stroke="#2563eb" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="0" id="btn-a"/>
+                        <g stroke="#ffffff" stroke-width="3" fill="none">
+                            <line x1="-6" y1="19" x2="6" y2="31"/>
+                            <line x1="6" y1="19" x2="-6" y2="31"/>
+                        </g>
+                        
+                        <!-- Square Button (Pink) -->
+                        <circle cx="-25" cy="0" r="14" fill="#ec4899" stroke="#db2777" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="2" id="btn-x"/>
+                        <rect x="-31" y="-6" width="12" height="12" fill="#ffffff" stroke="#ffffff" stroke-width="1"/>
+                        
+                        <!-- Circle Button (Orange) -->
+                        <circle cx="25" cy="0" r="14" fill="#f97316" stroke="#ea580c" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="1" id="btn-b"/>
+                        <circle cx="25" cy="0" r="7" fill="none" stroke="#ffffff" stroke-width="3"/>
+                    </g>
+                    
+                    <!-- Left Analog Stick -->
+                    <g transform="translate(180, 240)">
+                        <circle cx="0" cy="0" r="22" fill="url(#stickGradient)" stroke="#495057" stroke-width="2" filter="url(#dropShadow)"/>
+                        <circle cx="0" cy="0" r="18" fill="#6c757d" stroke="#adb5bd" stroke-width="1"/>
+                        <g id="left-stick" class="controller-btn" data-button="10">
+                            <circle cx="0" cy="0" r="16" fill="url(#stickGradient)" stroke="#495057" stroke-width="2" filter="url(#innerShadow)"/>
+                            <circle cx="0" cy="0" r="12" fill="#343a40"/>
+                            <circle cx="-2" cy="-2" r="2" fill="#adb5bd" opacity="0.8"/>
+                        </g>
+                    </g>
+                    
+                    <!-- Right Analog Stick -->
+                    <g transform="translate(520, 240)">
+                        <circle cx="0" cy="0" r="22" fill="url(#stickGradient)" stroke="#495057" stroke-width="2" filter="url(#dropShadow)"/>
+                        <circle cx="0" cy="0" r="18" fill="#6c757d" stroke="#adb5bd" stroke-width="1"/>
+                        <g id="right-stick" class="controller-btn" data-button="11">
+                            <circle cx="0" cy="0" r="16" fill="url(#stickGradient)" stroke="#495057" stroke-width="2" filter="url(#innerShadow)"/>
+                            <circle cx="0" cy="0" r="12" fill="#343a40"/>
+                            <circle cx="-2" cy="-2" r="2" fill="#adb5bd" opacity="0.8"/>
+                        </g>
+                    </g>
+                    
+                    <!-- PlayStation Button -->
+                    <circle cx="350" cy="210" r="15" fill="url(#buttonGradient)" stroke="#adb5bd" stroke-width="2" filter="url(#dropShadow)" class="controller-btn" data-button="16" id="btn-home"/>
+                    <text x="350" y="216" text-anchor="middle" fill="#495057" font-size="12" font-weight="bold">PS</text>
+                    
+                    <!-- Light bar -->
+                    <rect x="300" y="65" width="100" height="6" rx="3" fill="#007bff" opacity="0.8" filter="url(#dropShadow)"/>
+                </svg>
+                
+                <!-- Controller Testing - All in One Box -->
+                <div class="testing-interface">
+                    <h3>📊 Live Controller Data</h3>
+                    
+                    <!-- All Testing in One Unified Box -->
+                    <div class="unified-testing-box">
+                        <!-- Sticks Row -->
+                        <div class="sticks-row">
+                            <!-- Left Stick -->
+                            <div class="stick-section">
+                                <h4>🕹️ Left Stick</h4>
+                                <div class="stick-visualizer">
+                                    <svg class="stick-path-svg" width="100" height="100" viewBox="0 0 120 120">
+                                        <path id="leftStickPathSVG" d="" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.8"/>
+                                    </svg>
+                                    <div class="stick-indicator" id="leftStickIndicator"></div>
+                                </div>
+                                <div class="stick-data">
+                                    X: <span id="leftStickX">0.00</span><br>
+                                    Y: <span id="leftStickY">0.00</span><br>
+                                    <div id="leftStickDrift" class="drift-status">No drift detected</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Stick -->
+                            <div class="stick-section">
+                                <h4>🕹️ Right Stick</h4>
+                                <div class="stick-visualizer">
+                                    <svg class="stick-path-svg" width="100" height="100" viewBox="0 0 120 120">
+                                        <path id="rightStickPathSVG" d="" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.8"/>
+                </svg>
+                                    <div class="stick-indicator" id="rightStickIndicator"></div>
+                                </div>
+                                <div class="stick-data">
+                                    X: <span id="rightStickX">0.00</span><br>
+                                    Y: <span id="rightStickY">0.00</span><br>
+                                    <div id="rightStickDrift" class="drift-status">No drift detected</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Triggers Row -->
+                        <div class="triggers-row">
+                            <!-- Left Trigger -->
+                            <div class="trigger-section">
+                                <h4>🎯 Left Trigger</h4>
+                                <div class="trigger-bar">
+                                    <div class="trigger-fill" id="leftTriggerFill"></div>
+                                </div>
+                                <div class="trigger-data">
+                                    <span id="leftTriggerValue">0%</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Trigger -->
+                            <div class="trigger-section">
+                                <h4>🎯 Right Trigger</h4>
+                                <div class="trigger-bar">
+                                    <div class="trigger-fill" id="rightTriggerFill"></div>
+                                </div>
+                                <div class="trigger-data">
+                                    <span id="rightTriggerValue">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Buttons and Controls Row -->
+                        <div class="buttons-row">
+                            <!-- All Buttons -->
+                            <div class="buttons-section">
+                                <h4>🎮 All Buttons</h4>
+                                <div id="buttonsGrid" class="buttons-grid">
+                                    <!-- Buttons will be generated by JavaScript -->
+                                </div>
+                            </div>
+                            
+                            <!-- Clear Button -->
+                            <div class="controls-section">
+                                <button onclick="clearPathHistory()" class="btn-primary clear-btn">
+                                    🧹 Clear Paths (P)
+                                </button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <!-- GamePad Tester Information Section -->
+        <section class="section">
+            <h2>How does the GamePad Tester work?</h2>
+            <p><strong>GamePad Tester</strong> is an <strong>online diagnostic tool</strong> that helps you check the performance of your controller in <strong>real-time</strong>. This tool lets you instantly detect issues and confirm if everything works correctly, whether you use a <strong>PS5 DualSense</strong>, <strong>PS4 DualShock</strong>, <strong>PS3</strong>, <strong>Xbox</strong>, or a <strong>generic PC gamepad</strong>.</p>
+            <p>Simply <strong>connect your controller</strong> and press a button on it to view <strong>live feedback</strong> directly in your browser with <strong>no downloads required</strong>.</p>
+            
+            <h2>What are the features of GamePad Tester?</h2>
+            <p>The features of the GamePad Tester are the following.</p>
+            
+            <div style="margin: 30px 0;">
+                <p style="margin-bottom: 20px;"><strong>Button Response (Controller Button Test):</strong> Press any button and see it <strong>light up instantly</strong> on the screen. This confirms each button is <strong>responsive</strong> and properly mapped.</p>
+                
+                <p style="margin-bottom: 20px;"><strong>Joystick Accuracy and Stick Drift Test:</strong> Move your <strong>analog sticks</strong> to check for smooth motion. GamePad tester detects <strong>stick drift</strong>, <strong>dead zones</strong>, and <strong>calibration issues</strong> that can affect gameplay precision.</p>
+                
+                <p style="margin-bottom: 20px;"><strong>Controller Vibration Test:</strong> Run the controller vibration tester to make sure <strong>haptic feedback</strong> and <strong>rumble functions</strong> are working correctly.</p>
+                
+                <p style="margin-bottom: 20px;"><strong>Microphone Test:</strong> Test the <strong>microphone response</strong> by recording audio to ensure it's working properly if your controller supports <strong>voice input</strong>.</p>
+                
+                <p style="margin-bottom: 20px;"><strong>Trigger Test:</strong> Pull the triggers to verify <strong>full range</strong>, <strong>input sensitivity</strong>, and <strong>response time</strong>.</p>
+                
+                <p style="margin-bottom: 20px;"><strong>Real-Time Input Feedback:</strong> See every action in <strong>real time</strong> as buttons light up or sticks move with <strong>buttons and paths history</strong>. This gives you <strong>clear results</strong> without any guesswork.</p>
+                
+                <p style="margin-bottom: 0;"><strong>Cross-Platform Support:</strong> GamePad Tester works with <strong>PS5 DualSense controllers</strong>, <strong>PS4 DualShock controllers</strong>, <strong>PS3 controllers</strong>, <strong>Xbox One and Xbox Series controllers</strong>, and <strong>Generic PC gamepads</strong>.</p>
+                </div>
+            
+            <h2>Why use GamePad Tester?</h2>
+            <p><strong>GamePad Tester</strong> helps you <strong>detect problems early</strong> because your controller is the gateway to your best gaming moments. Small problems like <strong>stick drift</strong> or <strong>unresponsive buttons</strong> can break your focus and cost you wins. GamePad Tester helps you quickly <strong>diagnose issues</strong> and keep your gear in <strong>top condition</strong> to keep the victory streak rolling.</p>
+            
+            <p>The benefits of using <strong>GamePad Tester</strong> are described below.</p>
+            
+            <div style="margin: 30px 0;">
+                <p style="margin-bottom: 15px;">• GamePad Tester <strong>saves time</strong> by letting you test your controller online in <strong>seconds without setup</strong>.</p>
+                
+                <p style="margin-bottom: 15px;">• GamePad Tester helps you <strong>stay ahead of issues</strong> by detecting <strong>stick drift</strong>, <strong>button lag</strong>, or <strong>vibration failure</strong> early.</p>
+                
+                <p style="margin-bottom: 15px;">• GamePad Tester <strong>confirms repairs</strong> so you know your controller works before you jump back into matches.</p>
+                
+                <p style="margin-bottom: 15px;">• GamePad Tester supports <strong>all devices</strong> like <strong>PS5</strong>, <strong>PS4</strong>, <strong>PS3</strong>, <strong>Xbox controllers</strong>, and <strong>PC gamepads</strong>.</p>
+                
+                <p style="margin-bottom: 15px;">• GamePad Tester gives <strong>peace of mind</strong> by showing that your gear responds with <strong>accuracy every time</strong>.</p>
+                
+                <p style="margin-bottom: 0;">• GamePad Tester is <strong>free and secure</strong> so you can run <strong>unlimited controller tests</strong> directly in your browser.</p>
+            </div>
+            
+            <h2>Start Testing Your Controller Now</h2>
+            <p>Ready to see if your controller is working properly? <strong>Connect your device</strong> and <strong>start testing instantly</strong>. It is <strong>free</strong>, <strong>fast</strong>, and <strong>easy</strong>.</p>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section faq-section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div style="margin-top: 40px;">
+                <div style="margin-bottom: 40px; padding: 30px; background: var(--background-light); border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                    <h3 style="margin-top: 0; margin-bottom: 15px; color: var(--primary-color);">What is GamePad Tester?</h3>
+                    <p style="margin: 0;"><strong>GamePad Tester</strong> is a <strong>free online tool</strong> that lets you test controllers of <strong>PS5</strong>, <strong>PS4</strong>, <strong>PS3</strong>, and <strong>Xbox</strong>. It checks <strong>button response</strong>, <strong>joystick accuracy</strong>, <strong>stick drift</strong>, <strong>trigger sensitivity</strong>, and <strong>vibration feedback</strong> directly in your browser.</p>
+                </div>
+                        
+                <div style="margin-bottom: 40px; padding: 30px; background: var(--background-light); border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                    <h3 style="margin-top: 0; margin-bottom: 15px; color: var(--primary-color);">How do I test my controller online?</h3>
+                    <p style="margin: 0;">To test your controller, <strong>connect it to your PC or laptop</strong> using a <strong>USB cable</strong> or <strong>Bluetooth</strong> and open GamePad Tester in your browser. Every <strong>button press</strong>, <strong>joystick move</strong>, and <strong>trigger pull</strong> will appear instantly as <strong>live feedback</strong>.</p>
+                </div>
+                        
+                <div style="margin-bottom: 40px; padding: 30px; background: var(--background-light); border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                    <h3 style="margin-top: 0; margin-bottom: 15px; color: var(--primary-color);">Can I detect stick drift on GamePad Tester?</h3>
+                    <p style="margin: 0;">Yes, you can <strong>detect stick drift</strong> on GamePad Tester by moving the <strong>analog sticks</strong>. You can see if they register <strong>unwanted movement</strong> even when untouched which helps confirm <strong>drift and dead zone problems</strong>.</p>
+                </div>
+                        
+                <div style="margin-bottom: 40px; padding: 30px; background: var(--background-light); border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                    <h3 style="margin-top: 0; margin-bottom: 15px; color: var(--primary-color);">Does GamePad Tester check controller vibration?</h3>
+                    <p style="margin: 0;">Yes, GamePad Tester includes a <strong>controller vibration tester</strong> that lets you activate vibration to confirm that your controller's <strong>haptic feedback</strong> or <strong>rumble features</strong> are working correctly.</p>
+                </div>
+                        
+                <div style="margin-bottom: 40px; padding: 30px; background: var(--background-light); border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                    <h3 style="margin-top: 0; margin-bottom: 15px; color: var(--primary-color);">Can I test my controller microphone?</h3>
+                    <p style="margin: 0;">Yes, you can <strong>test your controller microphone</strong> with GamePad Tester for controllers that support <strong>voice input</strong>, like the <strong>PS5 DualSense</strong> which ensures your mic picks up sound properly before using it in games or chats.</p>
+                </div>
+                        
+                <div style="margin-bottom: 40px; padding: 30px; background: var(--background-light); border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                    <h3 style="margin-top: 0; margin-bottom: 15px; color: var(--primary-color);">Is GamePad Tester safe to use?</h3>
+                    <p style="margin: 0;">Yes, GamePad Tester is <strong>safe to use</strong> because it runs entirely in your browser. <strong>No downloads</strong>, <strong>installations</strong>, or <strong>personal data collection</strong> are required to check your controller.</p>
+                </div>
+                        
+                <div style="margin-bottom: 40px; padding: 30px; background: var(--background-light); border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                    <h3 style="margin-top: 0; margin-bottom: 15px; color: var(--primary-color);">Why is my gamepad not showing up?</h3>
+                    <p style="margin-bottom: 15px;">Try the step listed below if your gamepad is not detected.</p>
+                    <div style="margin-left: 20px;">
+                        <p style="margin-bottom: 10px;">• Make sure your controller is <strong>properly connected</strong> by <strong>USB</strong> or <strong>Bluetooth</strong>.</p>
+                        <p style="margin-bottom: 10px;">• Check if your <strong>device drivers</strong> are installed and <strong>up to date</strong>.</p>
+                        <p style="margin-bottom: 10px;">• <strong>Refresh the browser page</strong> and reconnect your controller.</p>
+                        <p style="margin-bottom: 15px;">• Test with another <strong>USB port</strong> or <strong>Bluetooth pairing method</strong>.</p>
+                    </div>
+                    <p style="margin: 0;">If the gamepad still doesn't appear, it may not be supported by your system or browser. GamePad Tester works best with modern browsers like <strong>Chrome</strong>, <strong>Edge</strong>, or <strong>Firefox</strong>.</p>
+                </div>
+                        
+                <div style="margin-bottom: 0; padding: 30px; background: var(--background-light); border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                    <h3 style="margin-top: 0; margin-bottom: 15px; color: var(--primary-color);">Can I connect multiple controllers?</h3>
+                    <p style="margin: 0;">Yes, you can <strong>connect multiple controllers</strong> to GamePad Tester, and the tool will display inputs separately which is useful if you want to <strong>compare different controllers</strong> or confirm that both work before <strong>multiplayer gaming</strong>.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <!-- Help Modal -->
+    <div class="help-modal" id="helpModal">
+        <div class="help-modal-content">
+            <h3>🎮 How to Connect Your Controller</h3>
+            <p>Need help getting your controller connected? Here's what to do:</p>
+            
+            <div class="help-steps">
+                <div class="help-step">
+                    <div class="help-step-number">1</div>
+                    <div>
+                        <strong>Wired Connection:</strong> Plug your controller into your computer with a USB cable. Most controllers will connect automatically!
+                    </div>
+                </div>
+                
+                <div class="help-step">
+                    <div class="help-step-number">2</div>
+                    <div>
+                        <strong>Wireless (Bluetooth):</strong> Put your controller in pairing mode and connect it through your computer's Bluetooth settings.
+                    </div>
+                </div>
+                
+                <div class="help-step">
+                    <div class="help-step-number">3</div>
+                    <div>
+                        <strong>Press Any Button:</strong> Once connected, press any button on your controller to activate it!
+                    </div>
+                </div>
+                
+                <div class="help-step">
+                    <div class="help-step-number">4</div>
+                    <div>
+                        <strong>Still Not Working?</strong> Try refreshing this page, or check if your controller needs special drivers.
+                    </div>
+                </div>
+            </div>
+            
+            <p style="font-size: 0.9rem; color: var(--text-muted);">
+                💡 <strong>Pro tip:</strong> Xbox controllers usually work right away, PlayStation controllers might need DS4Windows or similar software on PC.
+            </p>
+            
+            <button class="close-modal-btn" onclick="closeHelpModal()">Got It! 👍</button>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced Multiple Gamepad Testing JavaScript
+        let gamepads = [];
+        let selectedGamepadIndex = null;
+        let animationId = null;
+        let driftTestStartTime = null;
+        let leftStickDriftData = [];
+        let rightStickDriftData = [];
+        
+        // Path tracking for joystick movement trails
+        let leftStickPath = [];
+        let rightStickPath = [];
+        let maxPathPoints = 100; // Maximum number of path points to keep
+
+        // Initialize gamepad detection
+        function initializeGamepadTesting() {
+            console.log('Initializing gamepad testing...');
+            
+            window.addEventListener("gamepadconnected", handleGamepadConnected);
+            window.addEventListener("gamepaddisconnected", handleGamepadDisconnected);
+            
+            // Check for already connected gamepads
+            checkForExistingGamepads();
+            
+            // Initialize controller slots
+            updateControllerSlots();
+            
+            // Start the update loop
+            startGamepadLoop();
+        }
+        
+        function checkForExistingGamepads() {
+            const gamepads = navigator.getGamepads();
+            console.log('Checking for existing gamepads:', gamepads);
+            
+            for (let i = 0; i < gamepads.length; i++) {
+                if (gamepads[i]) {
+                    console.log(`Found gamepad ${i}:`, gamepads[i].id);
+                }
+            }
+        }
+
+        // Update controller slots display
+        function updateControllerSlots() {
+            const gamepadList = navigator.getGamepads();
+            
+            for (let i = 0; i < 4; i++) {
+                const slot = document.getElementById(`controller${i}`);
+                const status = document.getElementById(`status${i}`);
+                const info = document.getElementById(`info${i}`);
+                const button = document.getElementById(`select${i}`);
+                const nameSpan = info.querySelector('.controller-name');
+                
+                if (gamepadList[i]) {
+                    // Controller connected
+                    slot.classList.add('connected');
+                    slot.classList.remove('selected');
+                    status.textContent = 'Connected 🎮';
+                    status.className = 'controller-status connected';
+                    nameSpan.textContent = gamepadList[i].id || `Controller ${i + 1}`;
+                    
+                    // Add controller details
+                    let details = info.querySelector('.controller-details');
+                    if (!details) {
+                        details = document.createElement('div');
+                        details.className = 'controller-details';
+                        info.appendChild(details);
+                    }
+                    details.textContent = `${gamepadList[i].buttons.length} buttons, ${gamepadList[i].axes.length} axes`;
+                    
+                    button.disabled = false;
+                    button.textContent = selectedGamepadIndex === i ? '✓ Testing This One!' : 'Test This Controller';
+                    button.className = selectedGamepadIndex === i ? 'select-controller-btn selected' : 'select-controller-btn';
+                    
+                    if (selectedGamepadIndex === i) {
+                        slot.classList.add('selected');
+                        status.textContent = 'Selected ⭐';
+                        status.className = 'controller-status selected';
+                    }
+                } else {
+                    // No controller
+                    slot.classList.remove('connected', 'selected');
+                    status.textContent = 'Not Connected';
+                    status.className = 'controller-status not-connected';
+                    nameSpan.textContent = 'Waiting for controller...';
+                    
+                    // Remove details if they exist
+                    const details = info.querySelector('.controller-details');
+                    if (details) {
+                        details.remove();
+                    }
+                    
+                    button.disabled = false;
+                    button.textContent = 'Need Help? 🤔';
+                    button.className = 'select-controller-btn';
+                }
+            }
+            
+            // Update main connection status
+            updateMainConnectionStatus();
+        }
+
+        // Handle controller button action (select or show help)
+        function handleControllerAction(index) {
+            const gamepadList = navigator.getGamepads();
+            if (gamepadList[index]) {
+                // Controller is connected, select it
+                selectController(index);
+            } else {
+                // No controller connected, show help
+                showHelpModal();
+            }
+        }
+
+        // Select a controller for testing
+        function selectController(index) {
+            const gamepadList = navigator.getGamepads();
+            if (gamepadList[index]) {
+                selectedGamepadIndex = index;
+                updateControllerSlots();
+                
+                // Update main status
+                const connectionText = document.getElementById('connectionText');
+                if (connectionText) {
+                    connectionText.textContent = `Testing ${gamepadList[index].id || `Controller ${index + 1}`} - Go ahead and press some buttons! 🎮`;
+                }
+                
+                // Update status dot
+                const statusDot = document.getElementById('connectionStatus');
+                if (statusDot) {
+                    statusDot.classList.remove('error');
+                    statusDot.classList.add('connected');
+                }
+                
+                // Generate button grid for this controller
+                generateButtonGrid();
+            }
+        }
+
+        // Show help modal
+        function showHelpModal() {
+            const modal = document.getElementById('helpModal');
+            if (modal) {
+                modal.classList.add('show');
+            }
+        }
+
+        // Close help modal
+        function closeHelpModal() {
+            const modal = document.getElementById('helpModal');
+            if (modal) {
+                modal.classList.remove('show');
+            }
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('helpModal');
+            if (event.target === modal) {
+                closeHelpModal();
+            }
+        });
+
+        // Update main connection status
+        function updateMainConnectionStatus() {
+            const gamepadList = navigator.getGamepads();
+            const connectedCount = Array.from(gamepadList).filter(gp => gp !== null).length;
+            const connectionText = document.getElementById('connectionText');
+            const statusDot = document.getElementById('connectionStatus');
+            
+            if (connectedCount === 0) {
+                if (connectionText) connectionText.textContent = 'No controllers detected - Connect one and press any button! 🎮';
+                if (statusDot) {
+                    statusDot.classList.remove('connected');
+                    statusDot.classList.add('error');
+                }
+            } else if (selectedGamepadIndex === null) {
+                if (connectionText) connectionText.textContent = `Found ${connectedCount} controller(s)! Pick one above to start testing 👆`;
+                if (statusDot) {
+                    statusDot.classList.remove('error');
+                    statusDot.classList.add('connected');
+                }
+            }
+        }
+
+        function handleGamepadConnected(event) {
+            updateControllerSlots();
+        }
+
+        function handleGamepadDisconnected(event) {
+            if (selectedGamepadIndex === event.gamepad.index) {
+                selectedGamepadIndex = null;
+            }
+            updateControllerSlots();
+        }
+
+        function updateConnectionStatus(connected) {
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+            const controllerInfo = document.getElementById('controllerInfo');
+            
+            if (connected) {
+                statusDot.classList.add('connected');
+                statusText.textContent = 'Controller Connected - Testing Active';
+                controllerInfo.style.display = 'block';
+            } else {
+                statusDot.classList.remove('connected');
+                statusText.textContent = 'No Controller Connected - Connect and press any button';
+                controllerInfo.style.display = 'none';
+            }
+        }
+
+        function updateControllerInfo() {
+            if (!gamepad) return;
+            
+            document.getElementById('controllerName').textContent = gamepad.id || 'Unknown Controller';
+            document.getElementById('controllerIndex').textContent = gamepad.index;
+            document.getElementById('buttonCount').textContent = gamepad.buttons.length;
+            document.getElementById('axesCount').textContent = gamepad.axes.length;
+            
+            generateButtonGrid();
+        }
+
+        function generateButtonGrid() {
+            const buttonsGrid = document.getElementById('buttonsGrid');
+            if (!buttonsGrid) return;
+            
+            buttonsGrid.innerHTML = '';
+            
+            const gamepads = navigator.getGamepads();
+            const gamepad = selectedGamepadIndex !== null ? gamepads[selectedGamepadIndex] : null;
+            if (!gamepad) return;
+            
+            // Add button grid title
+            const title = document.createElement('h4');
+            title.textContent = '🎮 Button Testing';
+            title.style.marginBottom = '15px';
+            title.style.width = '100%';
+            buttonsGrid.appendChild(title);
+            
+            gamepad.buttons.forEach((button, index) => {
+                const buttonElement = document.createElement('div');
+                buttonElement.className = 'button-tester';
+                
+                // Button names mapping for common controllers
+                const buttonNames = {
+                    0: 'A/X', 1: 'B/Circle', 2: 'X/Square', 3: 'Y/Triangle',
+                    4: 'LB/L1', 5: 'RB/R1', 6: 'LT/L2', 7: 'RT/R2',
+                    8: 'Back/Select', 9: 'Start/Options', 10: 'L3', 11: 'R3',
+                    12: 'D-Up', 13: 'D-Down', 14: 'D-Left', 15: 'D-Right', 16: 'Home'
+                };
+                
+                const buttonName = buttonNames[index] || `Button ${index}`;
+                
+                buttonElement.innerHTML = `
+                    <div class="button-label">${buttonName}</div>
+                    <div class="button-value">0%</div>
+                `;
+                buttonElement.id = `button-${index}`;
+                buttonsGrid.appendChild(buttonElement);
+            });
+        }
+
+        function startGamepadLoop() {
+            function gamepadLoop() {
+                // Always update controller slots to detect new controllers
+                updateControllerSlots();
+                
+                const gamepads = navigator.getGamepads();
+                const gamepad = selectedGamepadIndex !== null ? gamepads[selectedGamepadIndex] : null;
+                
+                // Update debug info
+                updateDebugInfo(gamepads, gamepad);
+                
+                if (gamepad) {
+                    updateControllerVisuals();
+                    updateStickTesting();
+                    updateTriggerTesting();
+                    updateButtonTesting();
+                    updateDriftDetection();
+                } else {
+                    // Auto-select first available controller if none selected
+                    for (let i = 0; i < gamepads.length; i++) {
+                        if (gamepads[i] && selectedGamepadIndex === null) {
+                            console.log('Auto-selecting controller:', i);
+                            selectController(i);
+                            break;
+                        }
+                    }
+                }
+                
+                animationId = requestAnimationFrame(gamepadLoop);
+            }
+            gamepadLoop();
+        }
+        
+        function updateDebugInfo(gamepads, selectedGamepad) {
+            const debugElement = document.getElementById('debugInfo');
+            if (!debugElement) return;
+            
+            const connectedCount = Array.from(gamepads).filter(gp => gp !== null).length;
+            let debugText = `Controllers found: ${connectedCount}`;
+            
+            if (selectedGamepad) {
+                const pressedButtons = selectedGamepad.buttons.map((btn, i) => btn.pressed ? i : null).filter(i => i !== null);
+                debugText += ` | Selected: ${selectedGamepad.id.substring(0, 20)}... | Pressed: [${pressedButtons.join(',')}]`;
+            }
+            
+            debugElement.textContent = debugText;
+        }
+
+        function updateControllerVisuals() {
+            const gamepads = navigator.getGamepads();
+            const gamepad = selectedGamepadIndex !== null ? gamepads[selectedGamepadIndex] : null;
+            if (!gamepad) return;
+            
+            // Update visual controller buttons
+            gamepad.buttons.forEach((button, index) => {
+                const buttonElement = document.querySelector(`[data-button="${index}"]`);
+                if (buttonElement) {
+                    if (button.pressed) {
+                        buttonElement.classList.add('active');
+                        console.log(`Button ${index} pressed!`);
+                    } else {
+                        buttonElement.classList.remove('active');
+                    }
+                }
+            });
+            
+            // Update analog sticks visual position
+            if (gamepad.axes.length >= 4) {
+                const leftX = gamepad.axes[0] || 0;
+                const leftY = gamepad.axes[1] || 0;
+                const rightX = gamepad.axes[2] || 0;
+                const rightY = gamepad.axes[3] || 0;
+                
+                // Update left stick position
+                const leftStick = document.getElementById('left-stick');
+                if (leftStick) {
+                    const offsetX = leftX * 8; // Scale the movement (reduced from 10 to 8 for better range)
+                    const offsetY = leftY * 8;
+                    leftStick.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+                }
+                
+                // Update right stick position
+                const rightStick = document.getElementById('right-stick');
+                if (rightStick) {
+                    const offsetX = rightX * 8; // Scale the movement (reduced from 10 to 8 for better range)
+                    const offsetY = rightY * 8;
+                    rightStick.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+                }
+            }
+        }
+
+        function updateStickTesting() {
+            const gamepads = navigator.getGamepads();
+            const gamepad = selectedGamepadIndex !== null ? gamepads[selectedGamepadIndex] : null;
+            if (!gamepad || gamepad.axes.length < 4) return;
+            
+            const leftX = gamepad.axes[0] || 0;
+            const leftY = gamepad.axes[1] || 0;
+            const rightX = gamepad.axes[2] || 0;
+            const rightY = gamepad.axes[3] || 0;
+            
+            // Update left stick
+            document.getElementById('leftStickX').textContent = leftX.toFixed(2);
+            document.getElementById('leftStickY').textContent = leftY.toFixed(2);
+            updateStickIndicator('leftStickIndicator', leftX, leftY);
+            
+            // Update right stick
+            document.getElementById('rightStickX').textContent = rightX.toFixed(2);
+            document.getElementById('rightStickY').textContent = rightY.toFixed(2);
+            updateStickIndicator('rightStickIndicator', rightX, rightY);
+            
+            // Track path for movement trails (only if stick is moved significantly)
+            const leftDistance = Math.sqrt(leftX * leftX + leftY * leftY);
+            const rightDistance = Math.sqrt(rightX * rightX + rightY * rightY);
+            
+            if (leftDistance > 0.1) { // Only track if stick is moved beyond dead zone
+                addPathPoint(leftStickPath, leftX, leftY);
+                updatePathVisualization('leftStickPathSVG', leftStickPath);
+            }
+            
+            if (rightDistance > 0.1) { // Only track if stick is moved beyond dead zone
+                addPathPoint(rightStickPath, rightX, rightY);
+                updatePathVisualization('rightStickPathSVG', rightStickPath);
+            }
+            
+            // Collect drift data
+            const currentTime = Date.now();
+            if (!driftTestStartTime) driftTestStartTime = currentTime;
+            
+            leftStickDriftData.push({time: currentTime, x: leftX, y: leftY});
+            rightStickDriftData.push({time: currentTime, x: rightX, y: rightY});
+            
+            // Keep only last 5 seconds of data
+            const cutoffTime = currentTime - 5000;
+            leftStickDriftData = leftStickDriftData.filter(data => data.time > cutoffTime);
+            rightStickDriftData = rightStickDriftData.filter(data => data.time > cutoffTime);
+        }
+
+        function updateStickIndicator(indicatorId, x, y) {
+            const indicator = document.getElementById(indicatorId);
+            if (!indicator) return;
+            
+            const maxDistance = 50;
+            const offsetX = x * maxDistance;
+            const offsetY = y * maxDistance;
+            
+            indicator.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+        }
+        
+        function addPathPoint(pathArray, x, y) {
+            // Convert joystick coordinates (-1 to 1) to SVG coordinates (0 to 120)
+            const svgX = (x + 1) * 60; // Convert -1,1 to 0,120 range
+            const svgY = (y + 1) * 60; // Convert -1,1 to 0,120 range
+            
+            pathArray.push({ x: svgX, y: svgY, timestamp: Date.now() });
+            
+            // Keep only recent points (limit path length)
+            if (pathArray.length > maxPathPoints) {
+                pathArray.shift();
+            }
+            
+            // Remove points older than 10 seconds
+            const cutoffTime = Date.now() - 10000;
+            while (pathArray.length > 0 && pathArray[0].timestamp < cutoffTime) {
+                pathArray.shift();
+            }
+        }
+        
+        function updatePathVisualization(pathSvgId, pathArray) {
+            const pathElement = document.getElementById(pathSvgId);
+            if (!pathElement || pathArray.length < 2) {
+                if (pathElement) pathElement.setAttribute('d', '');
+                return;
+            }
+            
+            // Create SVG path string
+            let pathString = `M ${pathArray[0].x} ${pathArray[0].y}`;
+            
+            for (let i = 1; i < pathArray.length; i++) {
+                pathString += ` L ${pathArray[i].x} ${pathArray[i].y}`;
+            }
+            
+            pathElement.setAttribute('d', pathString);
+        }
+        
+        function clearPathHistory() {
+            leftStickPath = [];
+            rightStickPath = [];
+            
+            // Clear visual paths
+            const leftPath = document.getElementById('leftStickPathSVG');
+            const rightPath = document.getElementById('rightStickPathSVG');
+            
+            if (leftPath) leftPath.setAttribute('d', '');
+            if (rightPath) rightPath.setAttribute('d', '');
+        }
+
+        function updateTriggerTesting() {
+            const gamepads = navigator.getGamepads();
+            const gamepad = selectedGamepadIndex !== null ? gamepads[selectedGamepadIndex] : null;
+            if (!gamepad || gamepad.buttons.length < 8) return;
+            
+            const leftTrigger = gamepad.buttons[6] ? gamepad.buttons[6].value : 0;
+            const rightTrigger = gamepad.buttons[7] ? gamepad.buttons[7].value : 0;
+            
+            const leftPercent = Math.round(leftTrigger * 100);
+            const rightPercent = Math.round(rightTrigger * 100);
+            
+            document.getElementById('leftTriggerValue').textContent = `${leftPercent}%`;
+            document.getElementById('rightTriggerValue').textContent = `${rightPercent}%`;
+            
+            document.getElementById('leftTriggerFill').style.width = `${leftPercent}%`;
+            document.getElementById('rightTriggerFill').style.width = `${rightPercent}%`;
+        }
+
+        function updateButtonTesting() {
+            const gamepads = navigator.getGamepads();
+            const gamepad = selectedGamepadIndex !== null ? gamepads[selectedGamepadIndex] : null;
+            if (!gamepad) return;
+            
+            gamepad.buttons.forEach((button, index) => {
+                const buttonElement = document.getElementById(`button-${index}`);
+                if (buttonElement) {
+                    const value = Math.round(button.value * 100);
+                    const valueElement = buttonElement.querySelector('.button-value');
+                    if (valueElement) {
+                        valueElement.textContent = `${value}%`;
+                    }
+                    
+                    if (button.pressed) {
+                        buttonElement.classList.add('pressed');
+                    } else {
+                        buttonElement.classList.remove('pressed');
+                    }
+                }
+            });
+        }
+
+        function updateDriftDetection() {
+            const leftDrift = analyzeDriftData(leftStickDriftData);
+            const leftDriftElement = document.getElementById('leftStickDrift');
+            if (leftDriftElement) {
+                leftDriftElement.textContent = leftDrift > 0.05 ? 
+                    `Drift detected: ${leftDrift.toFixed(3)}` : 'No drift detected';
+                leftDriftElement.className = leftDrift > 0.05 ? 'drift-status warning' : 'drift-status';
+            }
+            
+            const rightDrift = analyzeDriftData(rightStickDriftData);
+            const rightDriftElement = document.getElementById('rightStickDrift');
+            if (rightDriftElement) {
+                rightDriftElement.textContent = rightDrift > 0.05 ? 
+                    `Drift detected: ${rightDrift.toFixed(3)}` : 'No drift detected';
+                rightDriftElement.className = rightDrift > 0.05 ? 'drift-status warning' : 'drift-status';
+            }
+        }
+
+        function analyzeDriftData(driftData) {
+            if (driftData.length < 10) return 0;
+            
+            let maxDrift = 0;
+            driftData.forEach(data => {
+                const drift = Math.sqrt(data.x * data.x + data.y * data.y);
+                maxDrift = Math.max(maxDrift, drift);
+            });
+            
+            return maxDrift;
+        }
+
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isOpen = answer.classList.contains('open');
+            
+            document.querySelectorAll('.faq-answer').forEach(answer => {
+                answer.classList.remove('open');
+            });
+            
+            if (!isOpen) {
+                answer.classList.add('open');
+            }
+        }
+
+        // Add user interaction detection for gamepad discovery
+        function addUserInteractionListeners() {
+            document.addEventListener('keydown', function(event) {
+                // Check for 'p' key to clear paths
+                if (event.key.toLowerCase() === 'p') {
+                    clearPathHistory();
+                }
+                checkForNewGamepads();
+            });
+            document.addEventListener('click', checkForNewGamepads);
+            window.addEventListener('focus', checkForNewGamepads);
+        }
+        
+        function checkForNewGamepads() {
+            const gamepads = navigator.getGamepads();
+            let foundNew = false;
+            
+            for (let i = 0; i < gamepads.length; i++) {
+                if (gamepads[i]) {
+                    foundNew = true;
+                    console.log(`Controller detected: ${gamepads[i].id}`);
+                }
+            }
+            
+            if (foundNew) {
+                updateControllerSlots();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeGamepadTesting();
+            addUserInteractionListeners();
+            
+            // Mobile navigation toggle
+            const mobileNavToggle = document.getElementById('mobileNavToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (mobileNavToggle && navLinks) {
+                mobileNavToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('show');
+                });
+                
+                // Close mobile menu when clicking on a link
+                navLinks.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('nav-link')) {
+                        navLinks.classList.remove('show');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Modern Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <!-- Brand Section -->
+                    <div class="footer-section">
+                        <div class="footer-brand">🎮 GamePad Tester</div>
+                        <p class="footer-description">
+                            The ultimate online gamepad tester for PS4, PS5, Xbox, and PC controllers. 
+                            Test your controllers for free with our comprehensive diagnostic tools.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" title="Facebook">📘</a>
+                            <a href="#" class="social-link" title="Twitter">🐦</a>
+                            <a href="#" class="social-link" title="YouTube">📺</a>
+                            <a href="#" class="social-link" title="Discord">💬</a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="guide.html">Guide</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="guide.html">Troubleshooting</a></li>
+                            <li><a href="guide.html">Tips & Tricks</a></li>
+                            <li><a href="guide.html">Controller Reviews</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Legal -->
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <ul class="footer-links">
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="about.html">Partner With Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <p>&copy; 2025 GamePad Tester. All rights reserved.</p>
+                        <div class="footer-legal">
+                            <a href="privacy.html">Privacy</a>
+                            <a href="terms.html">Terms</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

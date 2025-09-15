@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GamePad Tester | Free Gamepad Testing Tool</title>
+    <meta name="description" content="Learn about GamePad Tester - the ultimate free online gamepad tester for PS4, PS5, Xbox, and PC controllers. Our mission is to help gamers worldwide.">
+    
+    <!-- About Page Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About GamePad Tester",
+        "description": "Learn about GamePad Tester - the ultimate free online gamepad tester for PS4, PS5, Xbox, and PC controllers.",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "GamePad Tester",
+            "url": "https://gamepadtester.tech",
+            "description": "We're passionate gamers dedicated to helping you get the most out of your gaming controllers.",
+            "foundingDate": "2024",
+            "mission": "To empower gamers worldwide with the tools they need to maintain their gaming equipment and enjoy uninterrupted gaming experiences."
+        }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --success-color: #22c55e;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --background: #ffffff;
+            --background-light: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --border-color: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--background-light);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Modern Navigation */
+        .main-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 100px 0 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .section {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--background-light);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .team-card {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 20px auto;
+            color: white;
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .team-role {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-bio {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .value-card {
+            padding: 30px;
+            background: var(--background-light);
+            border-radius: 16px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .value-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Modern Footer */
+        .main-footer {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            margin-top: 80px;
+            padding: 60px 0 30px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 40px 30px;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .stats-grid,
+            .team-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <a href="index.html" class="nav-brand">🎮 GamePad Tester</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="guide.html" class="nav-link">Guide</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>About GamePad Tester</h1>
+                <p class="hero-subtitle">
+                    We're passionate gamers dedicated to helping you get the most out of your gaming controllers. 
+                    Our mission is to provide the best free testing tools for the gaming community.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content-section">
+            <!-- Our Story -->
+            <section class="section">
+                <h2>Our Story</h2>
+                <p>
+                    GamePad Tester was born out of frustration. As avid gamers, we've all experienced that moment when you're not sure if it's your controller that's the problem or if you're just having an off day. Stick drift, unresponsive buttons, and calibration issues can make even the best players look like beginners.
+                </p>
+                <p>
+                    We realized there was a need for a simple, reliable, and free tool that could instantly diagnose controller issues. No downloads, no complicated setup, no technical jargon – just connect your controller and get answers.
+                </p>
+                <p>
+                    Since launching, we've helped over <strong>100,000 gamers</strong> worldwide test their controllers and get back to what they love most – gaming without frustration.
+                </p>
+
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">100K+</span>
+                        <span class="stat-label">Controllers Tested</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Issues Diagnosed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">25</span>
+                        <span class="stat-label">Controller Types Supported</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free Forever</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Mission -->
+            <section class="section">
+                <h2>Our Mission</h2>
+                <p>
+                    To empower gamers worldwide with the tools they need to maintain their gaming equipment and enjoy uninterrupted gaming experiences. We believe that technical issues shouldn't stand between you and your passion for gaming.
+                </p>
+                
+                <h3>What We Do</h3>
+                <p>
+                    We provide comprehensive, browser-based testing tools for gaming controllers that work with PlayStation, Xbox, Nintendo, and PC gamepads. Our tools can detect:
+                </p>
+                <ul style="margin: 20px 0; padding-left: 30px; color: var(--text-secondary);">
+                    <li><strong>Stick Drift:</strong> Unwanted movement in analog sticks</li>
+                    <li><strong>Button Response:</strong> Dead or sticky buttons</li>
+                    <li><strong>Trigger Sensitivity:</strong> Calibration and range issues</li>
+                    <li><strong>Vibration Function:</strong> Haptic feedback problems</li>
+                    <li><strong>Connection Issues:</strong> Wireless and wired connectivity</li>
+                </ul>
+            </section>
+
+            <!-- Our Values -->
+            <section class="section">
+                <h2>Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <span class="value-icon">🆓</span>
+                        <h3 class="value-title">Always Free</h3>
+                        <p class="value-description">
+                            We believe essential gaming tools should be accessible to everyone. Our service will always be completely free.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🔒</span>
+                        <h3 class="value-title">Privacy First</h3>
+                        <p class="value-description">
+                            Your data stays on your device. We don't collect personal information or track your gaming habits.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">⚡</span>
+                        <h3 class="value-title">Instant Results</h3>
+                        <p class="value-description">
+                            No waiting, no downloads. Get immediate feedback on your controller's performance in real-time.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🎮</span>
+                        <h3 class="value-title">Gamer-Focused</h3>
+                        <p class="value-description">
+                            Built by gamers, for gamers. We understand what you need and design our tools accordingly.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🌍</span>
+                        <h3 class="value-title">Universal Compatibility</h3>
+                        <p class="value-description">
+                            Works with all major controller brands and platforms. One tool for all your gaming needs.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🔧</span>
+                        <h3 class="value-title">Continuous Improvement</h3>
+                        <p class="value-description">
+                            We constantly update our tools based on user feedback and new controller technologies.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Contact CTA -->
+            <section class="section" style="text-align: center; background: var(--gradient-primary); color: white;">
+                <h2 style="color: white;">Get In Touch</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; margin-bottom: 30px;">
+                    Have questions, suggestions, or just want to say hi? We'd love to hear from you!
+                </p>
+                <a href="contact.html" style="background: white; color: var(--primary-color); padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block;">
+                    Contact Us
+                </a>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modern Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Section -->
+                <div class="footer-section">
+                    <div class="footer-brand">🎮 GamePad Tester</div>
+                    <p class="footer-description">
+                        The ultimate online gamepad tester for PS4, PS5, Xbox, and PC controllers. 
+                        Test your controllers for free with our comprehensive diagnostic tools.
+                    </p>
+                </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="guide.html">Guide</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="guide.html">Troubleshooting</a></li>
+                            <li><a href="guide.html">Tips & Tricks</a></li>
+                            <li><a href="guide.html">Controller Reviews</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Legal -->
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <ul class="footer-links">
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GamePad Tester. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

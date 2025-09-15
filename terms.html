@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - GamePad Tester | Usage Terms & Conditions</title>
+    <meta name="description" content="Read our terms of service to understand the rules and guidelines for using GamePad Tester's free gamepad testing tools and services.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --success-color: #22c55e;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --background: #ffffff;
+            --background-light: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --border-color: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--background-light);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Modern Navigation */
+        .main-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        .page-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 80px 0 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Content */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .terms-content {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terms-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .last-updated {
+            background: var(--background-light);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .last-updated strong {
+            color: var(--primary-color);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        ul, ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: var(--background-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .highlight-box h4 {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background: #fff8f1;
+            border: 1px solid #fbbf24;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid var(--warning-color);
+        }
+
+        .warning-box h4 {
+            color: var(--warning-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .contact-button {
+            background: white;
+            color: var(--primary-color);
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        .main-footer {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            margin-top: 60px;
+            padding: 40px 0 20px 0;
+        }
+
+        .footer-content {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .terms-content {
+                padding: 40px 20px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <a href="index.html" class="nav-brand">🎮 GamePad Tester</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="guide.html" class="nav-link">Guide</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p class="page-subtitle">Simple, fair terms for using our free gamepad testing service</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="content-section">
+            <div class="terms-content">
+                <div class="last-updated">
+                    <strong>Last Updated:</strong> December 2024
+                </div>
+
+                <p>
+                    Welcome to GamePad Tester! These Terms of Service ("Terms") govern your use of our website and gamepad testing tools. 
+                    By using our service, you agree to these terms.
+                </p>
+
+                <div class="highlight-box">
+                    <h4>📋 The Basics</h4>
+                    <p>
+                        <strong>TL;DR:</strong> Use our free tools responsibly, don't try to break our service, 
+                        and remember that we provide these tools "as-is" for your convenience.
+                    </p>
+                </div>
+
+                <h2>1. Acceptance of Terms</h2>
+                <p>
+                    By accessing or using GamePad Tester ("Service," "we," "us," or "our"), you agree to be bound by these Terms. 
+                    If you disagree with any part of these terms, you may not access the Service.
+                </p>
+
+                <h2>2. Description of Service</h2>
+                <p>GamePad Tester provides:</p>
+                <ul>
+                    <li><strong>Free gamepad testing tools</strong> that run in your web browser</li>
+                    <li><strong>Controller diagnostic features</strong> including stick drift detection, button testing, and trigger calibration</li>
+                    <li><strong>Educational content</strong> about controller maintenance and troubleshooting</li>
+                    <li><strong>Support resources</strong> to help with common gaming controller issues</li>
+                </ul>
+
+                <h2>3. Acceptable Use</h2>
+
+                <h3>3.1 Permitted Uses</h3>
+                <p>You may use our service to:</p>
+                <ul>
+                    <li>Test and diagnose your gaming controllers</li>
+                    <li>Learn about controller maintenance and troubleshooting</li>
+                    <li>Access our educational guides and resources</li>
+                    <li>Share our service with friends and fellow gamers</li>
+                </ul>
+
+                <h3>3.2 Prohibited Uses</h3>
+                <p>You may NOT:</p>
+                <ul>
+                    <li><strong>Attempt to damage or disrupt</strong> our service or servers</li>
+                    <li><strong>Use automated tools</strong> to spam or overload our systems</li>
+                    <li><strong>Reverse engineer</strong> our code or attempt to extract our algorithms</li>
+                    <li><strong>Redistribute or resell</strong> our service without permission</li>
+                    <li><strong>Upload malicious content</strong> or attempt to inject harmful code</li>
+                    <li><strong>Violate any laws</strong> while using our service</li>
+                    <li><strong>Impersonate others</strong> or provide false information when contacting us</li>
+                </ul>
+
+                <h2>4. Free Service</h2>
+
+                <div class="highlight-box">
+                    <h4>🆓 Always Free</h4>
+                    <p>
+                        Our core gamepad testing service is and will always be free. We have no plans to introduce paid features or subscriptions.
+                    </p>
+                </div>
+
+                <p>
+                    GamePad Tester is provided free of charge. We reserve the right to:
+                </p>
+                <ul>
+                    <li>Add new features and improvements at our discretion</li>
+                    <li>Modify the service to improve performance or fix issues</li>
+                    <li>Temporarily suspend service for maintenance</li>
+                </ul>
+
+                <h2>5. Privacy and Data</h2>
+                <p>
+                    Your privacy is important to us. Please review our 
+                    <a href="privacy.html" style="color: var(--primary-color); font-weight: 600;">Privacy Policy</a> 
+                    to understand how we handle your information. Key points:
+                </p>
+                <ul>
+                    <li>We don't collect or store your controller data</li>
+                    <li>All testing happens locally in your browser</li>
+                    <li>We don't track your gaming habits or personal information</li>
+                </ul>
+
+                <h2>6. Disclaimers and Limitations</h2>
+
+                <div class="warning-box">
+                    <h4>⚠️ Important Limitations</h4>
+                    <p>
+                        Our service is provided "as-is" for convenience. While we strive for accuracy, 
+                        we cannot guarantee that our diagnostic tools will detect all controller issues.
+                    </p>
+                </div>
+
+                <h3>6.1 Service Availability</h3>
+                <p>We provide our service on a "best effort" basis. We do not guarantee:</p>
+                <ul>
+                    <li>100% uptime or continuous availability</li>
+                    <li>Compatibility with all controllers or browsers</li>
+                    <li>That our diagnostic results are 100% accurate</li>
+                    <li>That using our service will fix controller problems</li>
+                </ul>
+
+                <h3>6.2 Limitation of Liability</h3>
+                <p>
+                    To the maximum extent permitted by law, GamePad Tester shall not be liable for any:
+                </p>
+                <ul>
+                    <li>Indirect, incidental, or consequential damages</li>
+                    <li>Loss of data, profits, or business opportunities</li>
+                    <li>Damages resulting from controller testing or diagnostic results</li>
+                    <li>Issues arising from third-party hardware or software</li>
+                </ul>
+
+                <h3>6.3 Controller Safety</h3>
+                <p>
+                    Our testing tools are designed to be safe for your controllers, but:
+                </p>
+                <ul>
+                    <li>Use our tools at your own discretion</li>
+                    <li>Stop testing if you notice any unusual behavior</li>
+                    <li>We're not responsible for any hardware damage (though none should occur)</li>
+                </ul>
+
+                <h2>7. Intellectual Property</h2>
+
+                <h3>7.1 Our Rights</h3>
+                <p>
+                    GamePad Tester, including our website design, code, and content, is owned by us and protected by intellectual property laws.
+                </p>
+
+                <h3>7.2 Your Rights</h3>
+                <p>You may:</p>
+                <ul>
+                    <li>Use our service for personal and non-commercial purposes</li>
+                    <li>Link to our website from your own sites or social media</li>
+                    <li>Share screenshots of our diagnostic results</li>
+                </ul>
+
+                <h3>7.3 Restrictions</h3>
+                <p>You may not:</p>
+                <ul>
+                    <li>Copy, modify, or distribute our code without permission</li>
+                    <li>Create derivative works based on our service</li>
+                    <li>Remove copyright notices or attributions</li>
+                </ul>
+
+                <h2>8. Third-Party Services</h2>
+                <p>
+                    Our service may contain links to third-party websites or resources. We are not responsible for:
+                </p>
+                <ul>
+                    <li>The content or practices of external websites</li>
+                    <li>The accuracy of third-party information</li>
+                    <li>Any issues arising from using external services</li>
+                </ul>
+
+                <h2>9. Termination</h2>
+
+                <h3>9.1 Your Right to Stop Using</h3>
+                <p>
+                    You may stop using our service at any time. Simply close your browser or navigate away from our website.
+                </p>
+
+                <h3>9.2 Our Right to Restrict Access</h3>
+                <p>
+                    We may restrict or terminate access to our service if you:
+                </p>
+                <ul>
+                    <li>Violate these Terms of Service</li>
+                    <li>Attempt to damage or disrupt our service</li>
+                    <li>Engage in illegal activities using our platform</li>
+                </ul>
+
+                <h2>10. Changes to Terms</h2>
+                <p>
+                    We may update these Terms from time to time. When we do:
+                </p>
+                <ul>
+                    <li>We'll update the "Last Updated" date</li>
+                    <li>Significant changes will be highlighted on our website</li>
+                    <li>Continued use of our service means you accept the updated terms</li>
+                    <li>We'll never make changes that unfairly disadvantage users</li>
+                </ul>
+
+                <h2>11. Contact and Disputes</h2>
+
+                <h3>11.1 Contact Information</h3>
+                <p>
+                    If you have questions about these Terms or need to report violations, please contact us through our 
+                    <a href="contact.html" style="color: var(--primary-color); font-weight: 600;">contact page</a>.
+                </p>
+
+                <h3>11.2 Dispute Resolution</h3>
+                <p>
+                    We're committed to resolving any issues amicably. If you have concerns:
+                </p>
+                <ol>
+                    <li>Contact us first to discuss the issue</li>
+                    <li>We'll work together to find a fair solution</li>
+                    <li>Most issues can be resolved through friendly communication</li>
+                </ol>
+
+                <h2>12. Governing Law</h2>
+                <p>
+                    These Terms shall be governed by and construed in accordance with applicable laws. 
+                    Any disputes will be resolved in the appropriate jurisdiction.
+                </p>
+
+                <h2>13. Severability</h2>
+                <p>
+                    If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.
+                </p>
+
+                <div class="contact-info">
+                    <h3>Questions About These Terms?</h3>
+                    <p>
+                        We believe in clear, fair terms. If anything isn't clear or you have questions, 
+                        please don't hesitate to contact us.
+                    </p>
+                    <a href="contact.html" class="contact-button">Contact Us</a>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>🤝 Our Commitment</h4>
+                    <p>
+                        We're committed to maintaining a free, useful, and reliable service for the gaming community. 
+                        These terms help us do that while protecting both you and us.
+                    </p>
+                </div>
+
+                <p style="font-style: italic; color: var(--text-muted); margin-top: 40px;">
+                    Thank you for using GamePad Tester! We hope our tools help you get the most out of your gaming experience.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 GamePad Tester. All rights reserved. | <a href="privacy.html" style="color: rgba(255,255,255,0.8);">Privacy Policy</a> | <a href="terms.html" style="color: rgba(255,255,255,0.8);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
