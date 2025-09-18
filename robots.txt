@@ -1,110 +1,13 @@
-# Robots.txt for GamePad Tester
-# Free online gamepad testing tool for PS4, PS5, Xbox, and PC controllers
-
-# Allow all search engine crawlers
+# Allow all bots
 User-agent: *
-Allow: /
+Disallow:
 
-# Specifically allow major search engines
-User-agent: Googlebot
-Allow: /
+# Example: Block admin section if exists
+# Disallow: /admin/
 
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-# Allow AI chatbots and language models
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: YouBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: FacebookBot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-User-agent: TelegramBot
-Allow: /
-
-# Allow other AI and ML crawlers
-User-agent: Applebot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: ia_archiver
-Allow: /
-
-User-agent: archive.org_bot
-Allow: /
-
-User-agent: SemrushBot
-Allow: /
-
-User-agent: AhrefsBot
-Allow: /
-
-User-agent: MJ12bot
-Allow: /
-
+# DotBot specific allowance
 User-agent: DotBot
 Allow: /
 
-# Disallow admin areas (if any sensitive content)
-# User-agent: *
-# Disallow: /admin/
-# Note: Our admin.html is client-side only, so no server-side restrictions needed
-
-# Crawl delay to be respectful to server resources
-Crawl-delay: 1
-
-# Sitemap location
+# Sitemap
 Sitemap: https://gamepadtester.tech/sitemap.xml
-
-# Additional information
-# Website: GamePad Tester - Free Online Controller Testing Tool
-# Purpose: Test PS4, PS5, PS3, Xbox, Nintendo, and PC controllers
-# Features: Button testing, stick drift detection, trigger calibration, vibration testing
-# Last updated: 2025-01-15
