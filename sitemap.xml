@@ -1,45 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Homepage - Main GamePad Tester Tool -->
   <url>
     <loc>https://gamepadtester.tech/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- About Page -->
   <url>
     <loc>https://gamepadtester.tech/about.html</loc>
-    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
-  <!-- Guide/Blog Page -->
+  <!-- Guide / Blog Page -->
   <url>
     <loc>https://gamepadtester.tech/guide.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Contact Page -->
   <url>
     <loc>https://gamepadtester.tech/contact.html</loc>
-    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- Privacy Policy -->
   <url>
     <loc>https://gamepadtester.tech/privacy.html</loc>
-    <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -47,7 +39,6 @@
   <!-- Terms of Service -->
   <url>
     <loc>https://gamepadtester.tech/terms.html</loc>
-    <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
