@@ -425,15 +425,36 @@
             }
 
              loadBlogs() {
-                 // Clear all existing blogs
-                 localStorage.removeItem('gamepadBlogs');
-                 localStorage.removeItem('blogs');
-                 return [];
+                 // Load existing blogs or create default ones
+                 const stored = localStorage.getItem('gamepadBlogs');
+                 if (stored) {
+                     return JSON.parse(stored);
+                 }
+                 
+                 // Create default blog entry for PlayStation history
+                 const defaultBlogs = [
+                     {
+                         id: 'playstation-history',
+                         title: "The Complete History of PlayStation and Its Current Market",
+                         excerpt: "From PS1 to PS5 – Evolution of Sony's Gaming Giant, Controllers, Market Trends, and FAQs. Complete guide to PlayStation history and current market position.",
+                         content: "Complete history of PlayStation consoles from 1994 to 2024...",
+                         category: "Gaming History",
+                         date: new Date('2024-01-15').toISOString(),
+                         author: "GamePad Tester Team",
+                         url: "playstation-history.html",
+                         featuredImage: null
+                     }
+                 ];
+                 
+                 this.saveBlogs(defaultBlogs);
+                 return defaultBlogs;
              }
 
-            saveBlogs() {
-                localStorage.setItem('gamepadBlogs', JSON.stringify(this.blogs));
-            }
+             saveBlogs(blogs = null) {
+                 const blogsToSave = blogs || this.blogs;
+                 localStorage.setItem('gamepadBlogs', JSON.stringify(blogsToSave));
+             }
+
 
             addSampleBlogs() {
                 const sampleBlogs = [
@@ -599,8 +620,14 @@
 
         // Global functions
         function openBlog(blogId) {
-            // For now, just show an alert. Later we can create individual blog pages
-            alert(`Opening blog ${blogId}. Individual blog pages coming soon!`);
+            const blog = blogManager.blogs.find(b => b.id == blogId || b.id === blogId);
+            if (blog && blog.url) {
+                // Navigate to the actual blog page
+                window.location.href = blog.url;
+            } else {
+                // Fallback for blogs without URLs
+                alert(`Opening blog ${blogId}. Individual blog pages coming soon!`);
+            }
         }
 
         // Initialize blog manager
